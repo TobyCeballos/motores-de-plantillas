@@ -1,0 +1,24 @@
+h2(style="color: rgb(68, 68, 68);")='Listado de productos'
+a( href="http://localhost:8000/api/productos" class="btn text-light bg-dark" style="margin-bottom: 10px;")='Agregar productos'
+
+- if(objetos.length > 0){
+    div( class="table-responsive")
+        table( class="table table-dark")
+            tr(style="color: yellow;")
+                th='Name'
+                th='Price'
+                th='Thumbnail'
+                th='Id'
+            -for (const objeto of objetos) {
+            tr
+                td=objeto.name
+                td='$ '+objeto.price
+                td=objeto.thumbnail
+                td=objeto.id
+            -}
+        </table>
+        
+    </div>
+- } else{
+    h3( class="alert alert-danger")='No se encontraron productos :/'
+-}

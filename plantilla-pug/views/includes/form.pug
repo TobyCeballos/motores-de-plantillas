@@ -1,0 +1,17 @@
+
+h1='Ingresar producto'
+br
+form(action="/api/productos/p" method="POST")
+    div(class="form-group")
+        label(for="name")='Name'
+        input(type="text" class="form-control" name="name" id="name")
+    div(class="form-group")
+        label(for="price")='Price'
+        input(type="number" class="form-control" name="price" id="price")
+    div(class="form-group")
+        label(for="thumbnail")='Thumbnail'
+        input(type="text" class="form-control" name="thumbnail" id="thumbnail")
+
+    div(class="btn__container")
+        button(type="submit" class="btn btn-success mt-3 mb-5")='Agregar'
+        a(href="http://localhost:8000/api/productos/products" class="btn btn-primary mt-3 mb-5" style="margin-left: 5px;")='Listado de productos'
