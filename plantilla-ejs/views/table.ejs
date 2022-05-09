@@ -1,0 +1,21 @@
+<h2 style="color: rgb(68, 68, 68);">Listado de productos</h2>
+<a href="http://localhost:8000/api/productos" class="btn text-light bg-dark" style="margin-bottom: 10px;">Agregar productos</a>
+
+<% if(objetos.length > 0){%>
+    <div class="table-responsive">
+        <table class="table table-dark">
+            <tr style="color: yellow;"><th>Name</th> <th>Price</th> <th>Thumbnail</th> <th>Id</th></tr>
+            <% for (const objeto of objetos) { %>
+            <tr>
+                <td><%=objeto.name%></td>
+                <td><%=objeto.price%></td>
+                <td><%=objeto.thumbnail%></td>
+                <td><%=objeto.id%></td>
+            </tr>
+            <%};%>
+        </table>
+        
+    </div>
+<% } else{%>
+    <h3 class="alert alert-danger">No se encontraron productos :/</h3>
+<% } %>
